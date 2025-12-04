@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Himanshu Aggarwal | Software Developer & AI/ML Enthusiast</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+    <style>
+        :root {
+            --primary: #0d6efd;
+            --accent: #0dcaf0;
+            --dark: #0f172a;
+            --muted: #64748b;
+            --light-bg: #f5f7fb;
+            --card-bg: rgba(255, 255, 255, 0.9);
+        }
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+                "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top left, #e0f2fe 0, #f8fafc 40%, #eef2ff 100%);
+            color: #0f172a;
+        }
+
+        .navbar {
+            backdrop-filter: blur(16px);
+            background: rgba(248, 250, 252, 0.9);
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #475569 !important;
+        }
+
+        .nav-link.active,
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        .hero-section {
+            padding-top: 6.5rem;
+            padding-bottom: 4rem;
+        }
+
+        .hero-badge {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--primary);
+            background: rgba(13, 110, 253, 0.08);
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.35rem 0.9rem;
+            margin-bottom: 0.85rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 3.1vw, 2.8rem);
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-subtitle {
+            font-size: 0.96rem;
+            color: var(--muted);
+            max-width: 540px;
+        }
+
+        .btn-pill {
+            border-radius: 999px;
+            font-size: 0.9rem;
+            padding: 0.55rem 1.4rem;
+            font-weight: 500;
+        }
+
+        .btn-outline-soft {
+            border-radius: 999px;
+            font-size: 0.9rem;
+            padding: 0.55rem 1.4rem;
+            border: 1px solid rgba(148, 163, 184, 0.5);
+            color: #0f172a;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn-outline-soft:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: #ffffff;
+        }
+
+        .hero-card {
+            background: linear-gradient(145deg, #0f172a, #020617);
+            border-radius: 22px;
+            padding: 1.6rem 1.4rem;
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.5);
+            color: #e5e7eb;
+            max-width: 360px;
+            margin-inline: auto;
+        }
+
+        .hero-avatar-wrapper {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            padding: 3px;
+            background: conic-gradient(#0ea5e9,
+                    #6366f1,
+                    #22c55e,
+                    #f97316,
+                    #0ea5e9);
+        }
+
+        .hero-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #020617;
+        }
+
+        .hero-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.02);
+        }
+
+        .tag-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.72rem;
+            padding: 0.25rem 0.8rem;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.15);
+            color: #e5e7eb;
+            margin: 0.1rem;
+        }
+
+        .tag-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 999px;
+            background: #22c55e;
+        }
+
+        .section-padding {
+            padding-top: 3.2rem;
+            padding-bottom: 3.2rem;
+        }
+
+        .section-title-wrap {
+            margin-bottom: 1.6rem;
+        }
+
+        .section-eyebrow {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--primary);
+            margin-bottom: 0.35rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--muted);
+            max-width: 620px;
+        }
+
+        .card-ghost {
+            background: var(--card-bg);
+            border-radius: 1.25rem;
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            padding: 1.4rem;
+            box-shadow: 0 16px 35px rgba(148, 163, 184, 0.2);
+            transition: transform 0.18s ease, box-shadow 0.18s ease,
+                border-color 0.18s ease, background-color 0.18s ease;
+            height: 100%;
+        }
+
+        .card-ghost:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 22px 45px rgba(148, 163, 184, 0.35);
+            border-color: rgba(13, 110, 253, 0.55);
+            background: #ffffff;
+        }
+
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.24rem 0.8rem;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            background: #e2e8f0;
+            color: #0f172a;
+            margin: 0.12rem;
+            font-weight: 500;
+        }
+
+        .chip-primary {
+            background: rgba(13, 110, 253, 0.12);
+            color: #0b5ed7;
+        }
+
+        .project-title {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .project-tech {
+            font-size: 0.78rem;
+            color: var(--muted);
+            margin-bottom: 0.35rem;
+        }
+
+        .project-links a {
+            font-size: 0.8rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-links a i {
+            font-size: 0.78rem;
+        }
+
+        footer {
+            font-size: 0.8rem;
+            color: var(--muted);
+            padding-block: 1.4rem;
+        }
+
+        @media (max-width: 767.98px) {
+            .hero-section {
+                padding-top: 5.5rem;
+            }
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background: #0f172a;
+            color: #e2e8f0;
+        }
+
+        .dark-mode .navbar {
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        .dark-mode .card-ghost {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.15);
+            color: #e2e8f0;
+        }
+
+        .dark-mode .hero-card {
+            background: linear-gradient(145deg, #1e293b, #0f172a);
+        }
+
+        .dark-mode .section-eyebrow {
+            color: #38bdf8;
+        }
+
+        .dark-mode .section-title {
+            color: #e2e8f0;
+        }
+
+        .dark-mode a {
+            color: #93c5fd !important;
+        }
+
+        /* Fix text color issues in dark mode */
+        .dark-mode .text-body-secondary,
+        .dark-mode .text-secondary {
+            color: #cbd5f5 !important;
+        }
+
+        .dark-mode p,
+        .dark-mode li,
+        .dark-mode span {
+            color: #f1f5f9 !important;
+        }
+
+        .dark-mode .chip {
+            background: rgba(255, 255, 255, 0.2);
+            color: #f8fafc;
+        }
+
+        .dark-mode .project-tech {
+            color: #cbd5f5;
+        }
+
+        .dark-mode footer {
+            color: #cbd5f5;
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .dark-mode .badge.bg-light {
+            background: rgba(255, 255, 255, 0.2) !important;
+            color: #f8fafc !important;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .dark-mode .project-title {
+            color: #f8fafc !important;
+        }
+
+        .dark-mode .project-links a {
+            color: #38bdf8 !important;
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: #fff !important;
+            border-color: var(--primary);
+        }
+
+        .animate-project {
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* .cursor {
+            font-weight: 600;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        #typingText {
+            color: var(--primary);
+            font-weight: 700;
+        } */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem !important;
+                text-align: center;
+            }
+
+            .hero-subtitle {
+                text-align: center;
+                font-size: 1rem;
+            }
+
+            .hero-badge {
+                font-size: 1rem !important;
+                padding: 0.5rem 1.3rem;
+            }
+
+            .hero-card {
+                margin-top: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem !important;
+                text-align: center;
+            }
+
+            .section-subtitle {
+                text-align: center;
+                font-size: 1rem;
+            }
+
+            nav .nav-link {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg fixed-top border-bottom">
+        <div class="container">
+            <a class="navbar-brand fw-semibold" href="#">
+                Himanshu <span class="text-primary">Aggarwal</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center gap-lg-2">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hobbies">Hobbies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <!-- 🌙 Dark Mode Button Here -->
+                    <li class="nav-item d-flex align-items-center ms-lg-2">
+                        <button id="themeToggle" class="btn btn-outline-soft btn-sm">
+                            ☀️ Light
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-primary btn-sm btn-pill" href="Himanshu_Aggarwal_Resume.pdf" target="_blank">
+                            Download Resume
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-section" data-aos="fade-up">
+        <div class="container">
+            <div class="row align-items-center g-4 g-lg-5">
+                <div class="col-lg-7">
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        Software Developer · AI/ML Enthusiast
+                    </div>
+                    <!-- <h1 class="hero-title">
+                        I build software, automation systems & applied AI solutions.
+                    </h1> -->
+                    <p class="hero-subtitle mb-3">
+                        I’m <strong>Himanshu Aggarwal</strong>, a Software Developer and
+                        B.Tech (ECE) student who enjoys turning ideas into working products
+                        from backend systems and automation workflows to practical AI/ML
+                        applications.
+                        I’m open to <strong>all Software Development roles</strong>, with a
+                        particular interest in backend and AI-driven products.
+                    </p>
+
+                    <div class="mb-4">
+                        <a href="#projects" class="btn btn-primary btn-pill me-2 mb-2">
+                            View Projects
+                        </a>
+                        <a href="Himanshu_Aggarwal_Resume.pdf" target="_blank"
+                            class="btn-outline-soft mb-2 d-inline-flex align-items-center gap-2">
+                            <i class="fa-regular fa-file-lines"></i>
+                            Download Resume
+                        </a>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-3 align-items-center">
+                        <a href="https://www.linkedin.com/in/himanshu-aggarwal-47298024a/" target="_blank"
+                            class="text-decoration-none text-body-secondary d-flex align-items-center gap-1">
+                            <i class="fa-brands fa-linkedin"></i>
+                            <span>LinkedIn Profile</span>
+                        </a>
+                        <a href="https://github.com/himanshuagg123" target="_blank"
+                            class="text-decoration-none text-body-secondary d-flex align-items-center gap-1">
+                            <i class="fa-brands fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="hero-card text-center">
+                        <div class="hero-avatar-wrapper">
+                            <div class="hero-avatar">
+                                <!-- Make sure file is named exactly profile.jpg in same folder -->
+                                <img src="profile.jpg" alt="Himanshu Aggarwal" />
+                            </div>
+                        </div>
+                        <p class="mb-1 fw-semibold">Himanshu Aggarwal</p>
+                        <p class="mb-3" style="font-size: 0.85rem; color: #cbd5f5;">
+                            Software Developer · Python · Django · REST APIs · AWS · AI/ML
+                        </p>
+
+                        <div class="d-flex flex-wrap justify-content-center mb-3">
+                            <span class="tag-pill">
+                                <span class="tag-dot"></span> Software Development
+                            </span>
+                            <span class="tag-pill">
+                                <span class="tag-dot"></span> Backend & APIs
+                            </span>
+                            <span class="tag-pill">
+                                <span class="tag-dot"></span> AI/ML & NLP
+                            </span>
+                            <span class="tag-pill">
+                                <span class="tag-dot"></span> AWS & Serverless
+                            </span>
+                        </div>
+
+                        <p class="mb-0 small text-secondary">
+                            Based in Faridabad, India
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section-padding" data-aos="fade-right">
+        <div class="container">
+            <div class="row g-4 align-items-start">
+                <div class="col-lg-7">
+                    <div class="section-title-wrap">
+                        <p class="section-eyebrow">About</p>
+                        <h2 class="section-title">Who I am</h2>
+                        <p class="section-subtitle">
+                            A software developer with a strong foundation in engineering and
+                            a growing focus on backend systems, cloud and applied AI/ML.
+                        </p>
+                    </div>
+                    <p class="small text-body-secondary mb-2">
+                        I completed my B.Tech in Electronics and Communication
+                        Engineering and actively building software projects around
+                        <strong>Django, REST APIs, AWS, Docker and AI/ML</strong>.
+                        I enjoy designing systems that are reliable, understandable and
+                        useful in real-life scenarios.
+                    </p>
+                    <p class="small text-body-secondary mb-2">
+                        I’ve worked on projects like an <strong>NLP-based Resume Parser</strong>,
+                        a <strong>Video-to-Text pipeline using BLIP</strong>,
+                        an <strong>AI Chat Bot Assistant</strong>, a
+                        <strong>Face Recognition based Attendance System</strong> and
+                        an <strong>AWS Auto DNS Mapper</strong> for serverless automation.
+                    </p>
+                    <p class="small text-body-secondary">
+                        Outside of pure tech, I like learning new concepts, improving my
+                        problem-solving skills, and experimenting with ideas. I’m curious by
+                        nature and enjoy building things that people can actually use.
+                    </p>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="card-ghost">
+                        <h6 class="mb-2">Quick Snapshot</h6>
+                        <ul class="small text-body-secondary mb-3">
+                            <li>B.Tech (ECE), Manav Rachna International Institute of Research and Studies (MRIIRS)</li>
+                            <li>Industrial Training as Backend Developer Intern at Rupyz</li>
+                            <li>Hands-on with Django, DRF, PostgreSQL, Redis, AWS, Docker</li>
+                            <li>Experience building AI/ML projects in NLP & Computer Vision</li>
+                        </ul>
+                        <div class="d-flex flex-wrap">
+                            <span class="chip chip-primary">Curious</span>
+                            <span class="chip chip-primary">Problem Solver</span>
+                            <span class="chip">Team Player</span>
+                            <span class="chip">Enthusiastic Learner</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section-padding" data-aos="fade-up">
+        <div class="container">
+            <div class="section-title-wrap text-center">
+                <p class="section-eyebrow">Skills</p>
+                <h2 class="section-title">Tech Stack & Tools</h2>
+                <p class="section-subtitle mx-auto">
+                    A mix of software engineering, backend development, AI/ML and cloud.
+                </p>
+            </div>
+
+            <div class="row g-3 g-md-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-ghost">
+                        <h6 class="mb-2"><i class="fa-solid fa-code me-2"></i>Languages</h6>
+                        <p class="small text-body-secondary mb-2">
+                            Strong in Python with good understanding of data structures and problem solving.
+                        </p>
+                        <span class="chip chip-primary">Python</span>
+                        <span class="chip">Java</span>
+                        <span class="chip">SQL</span>
+                        <span class="chip">HTML/CSS</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-ghost">
+                        <h6 class="mb-2"><i class="fa-solid fa-server me-2"></i>Backend & APIs</h6>
+                        <p class="small text-body-secondary mb-2">
+                            Designing and implementing REST APIs and backend logic.
+                        </p>
+                        <span class="chip chip-primary">Django</span>
+                        <span class="chip chip-primary">Django REST Framework</span>
+                        <span class="chip">RESTful APIs</span>
+                        <span class="chip">Authentication & Permissions</span>
+                        <span class="chip">Role-based Access</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-ghost">
+                        <h6 class="mb-2"><i class="fa-solid fa-brain me-2"></i>AI / ML</h6>
+                        <p class="small text-body-secondary mb-2">
+                            Applying AI/ML to build useful features in real projects.
+                        </p>
+                        <span class="chip chip-primary">NLP & NER</span>
+                        <span class="chip chip-primary">Text Classification</span>
+                        <span class="chip">Transformers (BLIP / BERT)</span>
+                        <span class="chip">Computer Vision (frames & captions)</span>
+                        <span class="chip">Model Fine-tuning</span>
+                        <span class="chip">PyTorch</span>
+                        <span class="chip">Scikit-learn</span>
+                        <span class="chip">NumPy & Pandas</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-ghost">
+                        <h6 class="mb-2"><i class="fa-solid fa-cloud me-2"></i>AWS & Cloud</h6>
+                        <p class="small text-body-secondary mb-2">
+                            Exploring cloud infrastructure and serverless automation.
+                        </p>
+                        <span class="chip chip-primary">EC2</span>
+                        <span class="chip chip-primary">Lambda</span>
+                        <span class="chip chip-primary">Route 53</span>
+                        <span class="chip">S3 (basic)</span>
+                        <span class="chip">IAM</span>
+                        <span class="chip">CloudWatch</span>
+                        <span class="chip">Serverless Workflows</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-ghost">
+                        <h6 class="mb-2"><i class="fa-solid fa-database me-2"></i>Databases & Cache</h6>
+                        <p class="small text-body-secondary mb-2">
+                            Working with relational data and improving performance.
+                        </p>
+                        <span class="chip chip-primary">PostgreSQL</span>
+                        <span class="chip">SQL</span>
+                        <span class="chip">Redis Caching</span>
+                        <span class="chip">Cassandra (concepts)</span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card-ghost">
+                        <h6 class="mb-2"><i class="fa-solid fa-toolbox me-2"></i>DevOps & Tools</h6>
+                        <p class="small text-body-secondary mb-2">
+                            Tools I use to build, test and ship projects.
+                        </p>
+                        <span class="chip chip-primary">Docker</span>
+                        <span class="chip">Linux (Ubuntu)</span>
+                        <span class="chip">Git & GitHub</span>
+                        <span class="chip">VS Code</span>
+                        <span class="chip">Postman</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section-padding" data-aos="fade-up">
+        <div class="container">
+            <div class="section-title-wrap">
+                <p class="section-eyebrow">Experience</p>
+
+            </div>
+
+            <div class="card-ghost">
+                <h6 class="fw-semibold mb-1">
+                    Backend Developer Intern · Rupyz
+                </h6>
+                <p class="small text-body-secondary mb-2">
+                    Industrial Training · 2025
+                </p>
+                <ul class="small text-body-secondary mb-2">
+                    <li>Developed and enhanced <strong>REST APIs using Django + DRF</strong> for production features.
+                    </li>
+                    <li>Created multiple API endpoints including <strong>GET, POST, PUT, DELETE</strong> with proper
+                        authentication & permissions.</li>
+                    <li>Worked with <strong>PostgreSQL</strong> for relational data modeling, indexing and efficient
+                        query operations.</li>
+                    <li>Optimized backend performance by implementing <strong>Redis caching</strong> for high-traffic
+                        data.</li>
+                    <li>Debugged and resolved technical issues by working alongside <strong>senior developers</strong>
+                        to improve reliability.</li>
+                    <li>Contributed to <strong>code refactoring & optimization</strong> for better maintainability and
+                        performance.</li>
+                    <li>Automated repetitive backend tasks to reduce manual workload and streamline workflows.</li>
+                    <li>Containerized services using <strong>Docker</strong> and learned deployment basics on Linux
+                        servers.</li>
+                    <li>Explored AWS services like <strong>EC2, Lambda, Route 53</strong> and monitoring using
+                        CloudWatch.</li>
+                    <li>Collaborated using <strong>Git</strong>, pull requests, versioning and technical documentation.
+                    </li>
+                </ul>
+
+                <span class="chip">Django</span>
+                <span class="chip">DRF</span>
+                <span class="chip">PostgreSQL</span>
+                <span class="chip">Redis</span>
+                <span class="chip">Docker</span>
+                <span class="chip">AWS Concepts</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <div class="section-title-wrap text-center">
+                <p class="section-eyebrow">Projects</p>
+
+                <p class="section-subtitle mx-auto">
+                    A mix of backend systems, automation and AI/ML-powered applications.
+                </p>
+            </div>
+            <div class="d-flex justify-content-center gap-2 flex-wrap mb-4">
+                <button class="btn btn-outline-soft btn-sm filter-btn active" data-filter="all">All</button>
+                <button class="btn btn-outline-soft btn-sm filter-btn" data-filter="ai">AI / ML</button>
+                <button class="btn btn-outline-soft btn-sm filter-btn" data-filter="backend">Backend</button>
+                <button class="btn btn-outline-soft btn-sm filter-btn" data-filter="automation">Automation</button>
+                <button class="btn btn-outline-soft btn-sm filter-btn" data-filter="cloud">Cloud</button>
+            </div>
+
+            <div class="row g-3 g-md-4 row-cols-1 row-cols-md-2">
+                <!-- Resume Parser -->
+                <div class="col project-item ai">
+                    <div class="card-ghost h-100" data-aos="zoom-in">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <p class="project-title mb-0">Resume Parser (NLP)</p>
+                            <span class="badge bg-light text-dark">NLP · ML</span>
+                        </div>
+                        <p class="project-tech">
+                            Python · spaCy · Scikit-learn · Pandas · Regex
+                        </p>
+                        <p class="small text-body-secondary mb-2">
+                            An NLP-based resume parser that extracts key information such as
+                            skills, experience, education and projects from unstructured
+                            resumes into a structured, machine-readable JSON format.
+                        </p>
+                        <p class="small text-body-secondary mb-3">
+                            Uses tokenization, lemmatization, NER and custom regex rules to
+                            identify and organize the most important fields for screening.
+                        </p>
+                        <div class="project-links d-flex gap-3">
+                            <a href="https://github.com/himanshuagg123/resume_parser" target="_blank"
+                                class="text-primary">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                            <a href="https://resume-parser-yo0o.onrender.com/" target="_blank" class="text-primary">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video-To-Text -->
+                <div class="col project-item ai">
+                    <div class="card-ghost h-100" data-aos="zoom-in">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <p class="project-title mb-0">Video-To-Text (BLIP)</p>
+                            <span class="badge bg-light text-dark">Vision · AI</span>
+                        </div>
+                        <p class="project-tech">
+                            Python · HuggingFace Transformers (BLIP) · PyTorch · OpenCV
+                        </p>
+                        <p class="small text-body-secondary mb-2">
+                            A pipeline that extracts frames from video and uses a BLIP
+                            vision-language model to generate descriptive captions for those
+                            frames.
+                        </p>
+                        <p class="small text-body-secondary mb-3">
+                            Designed to be modular so it can be integrated into future
+                            products like content analysis tools, summarization systems or
+                            assistive applications.
+                        </p>
+                        <div class="project-links d-flex gap-3">
+                            <a href="https://github.com/himanshuagg123/Vedio-To-Text" target="_blank"
+                                class="text-primary">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Chat Bot Assistant -->
+                <div class="col project-item ai backend">
+                    <div class="card-ghost h-100" data-aos="zoom-in">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <p class="project-title mb-0">AI Chat Bot Assistant</p>
+                            <span class="badge bg-light text-dark">AI · Chat</span>
+                        </div>
+                        <p class="project-tech">
+                            Django · AI API · HTML/CSS
+                        </p>
+                        <p class="small text-body-secondary mb-2">
+                            A web-based AI assistant that responds to user queries in a
+                            conversational way, designed like a chat interface.
+                        </p>
+                        <p class="small text-body-secondary mb-3">
+                            Focused on clean UI, prompt handling, and integrating AI models
+                            into a usable product-style interface.
+                        </p>
+                        <div class="project-links d-flex gap-3">
+                            <a href="https://github.com/himanshuagg123/ai_chat_bot_assistant/tree/main" target="_blank"
+                                class="text-primary">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                            <a href="https://ai-chat-bot-assistant-xrmg.onrender.com/" target="_blank"
+                                class="text-primary">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Face Recognition Attendance -->
+                <div class="col project-item ai">
+                    <div class="card-ghost h-100" data-aos="zoom-in">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <p class="project-title mb-0">
+                                Face Recognition Attendance System
+                            </p>
+                            <span class="badge bg-light text-dark">Computer Vision</span>
+                        </div>
+                        <p class="project-tech">
+                            Python · OpenCV · Tkinter · Pandas
+                        </p>
+                        <p class="small text-body-secondary mb-2">
+                            A real-time attendance system using face recognition that marks
+                            attendance based on recognized faces and stores it in CSV format.
+                        </p>
+                        <p class="small text-body-secondary mb-3">
+                            Features GUI for registration and attendance tracking, reducing
+                            manual work and improving reliability.
+                        </p>
+                        <div class="project-links d-flex gap-3">
+                            <a href="https://github.com/himanshuagg123/face-recognition" target="_blank"
+                                class="text-primary">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Auto DNS Mapper -->
+                <div class="col project-item cloud automation" data-aos="zoom-in">
+                    <div class="card-ghost h-100">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <p class="project-title mb-0">Auto DNS Mapper (AWS)</p>
+                            <span class="badge bg-light text-dark">Cloud · Automation</span>
+                        </div>
+                        <p class="project-tech">
+                            AWS Lambda · Route 53 · CloudWatch · IAM
+                        </p>
+                        <p class="small text-body-secondary mb-2">
+                            A serverless automation that updates Route 53 DNS A-records based
+                            on EC2 lifecycle events.
+                        </p>
+                        <p class="small text-body-secondary mb-3">
+                            Uses CloudWatch events and IAM to keep DNS mappings in sync,
+                            reducing manual DNS management effort.
+                        </p>
+                        <div class="project-links d-flex gap-3">
+                            <a href="https://github.com/himanshuagg123/Auto_dns_mapper" target="_blank"
+                                class="text-primary">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slack Notification Bot -->
+                <div class="col project-item automation backend" data-aos="zoom-in">
+                    <div class="card-ghost h-100">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <p class="project-title mb-0">Slack Notification Bot</p>
+                            <span class="badge bg-light text-dark">Automation</span>
+                        </div>
+                        <p class="project-tech">
+                            Python · Slack API · Docker
+                        </p>
+                        <p class="small text-body-secondary mb-2">
+                            A Slack bot that can be integrated with workflows to send
+                            notifications and updates in real-time.
+                        </p>
+                        <p class="small text-body-secondary mb-3">
+                            The bot is containerized with Docker so it can be deployed easily
+                            in different environments or pipelines.
+                        </p>
+                        <div class="project-links d-flex gap-3">
+                            <a href="https://github.com/himanshuagg123/slack1" target="_blank" class="text-primary">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Management System -->
+                <div class="col project-item backend" data-aos="zoom-in">
+                    <div class="card-ghost h-100">
+                        <div class="d-flex justify-content-between align-items-start mb-1">
+                            <p class="project-title mb-0">Student Management System</p>
+                            <span class="badge bg-light text-dark">Backend · Web</span>
+                        </div>
+                        <p class="project-tech">
+                            Django · Django REST Framework · PostgreSQL
+                        </p>
+                        <p class="small text-body-secondary mb-2">
+                            A role-based student management system with models for students,
+                            teachers, courses, classrooms, attendance and marks.
+                        </p>
+                        <p class="small text-body-secondary mb-3">
+                            Implements secure REST APIs and enforces subject-specific access
+                            rules for teachers entering marks and attendance.
+                        </p>
+                        <div class="project-links d-flex gap-3">
+                            <a href="https://github.com/himanshuagg123/student_management-_system" target="_blank"
+                                class="text-primary">
+                                <i class="fa-brands fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOBBIES -->
+    <section id="hobbies" class="section-padding" data-aos="fade-left">
+        <div class="container">
+            <div class="section-title-wrap">
+                <p class="section-eyebrow">Hobbies</p>
+                <h2 class="section-title">Beyond Code</h2>
+                <p class="section-subtitle">
+                    I believe being energetic and curious outside of work helps me stay sharp in tech as well.
+                </p>
+            </div>
+            <div class="card-ghost">
+                <p class="small text-body-secondary mb-2">
+                    Outside of programming, I love <strong>boxing</strong>,
+                    <strong>playing cricket</strong> and watching <strong>anime</strong>.
+                    These hobbies keep me active, competitive and creative.
+                </p>
+                <p class="small text-body-secondary mb-0">
+                    Whether it’s in the ring, on the field or exploring stories through anime,
+                    I enjoy pushing myself, learning new things and staying consistent — the same approach I bring to
+                    software development.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section-padding" data-aos="fade-up">
+        <div class="container">
+            <div class="section-title-wrap">
+                <p class="section-eyebrow">Contact</p>
+                <h2 class="section-title">Let’s work together</h2>
+                <p class="section-subtitle">
+                    Open to software development roles and meaningful projects.
+                    Feel free to reach out.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <div class="card-ghost">
+                        <p class="small text-body-secondary mb-3">
+                            If you think my skills and projects align with what you’re building,
+                            I’d be happy to connect and talk more — about opportunities, ideas or collaborations.
+                        </p>
+                        <a href="mailto:himanshuaggarwal.0011@gmail.com" class="btn btn-primary btn-pill mb-3">
+                            <i class="fa-regular fa-envelope me-2"></i>
+                            Email Me
+                        </a>
+                        <div class="row small text-body-secondary">
+                            <div class="col-sm-6 mb-2">
+                                <p class="mb-1 fw-semibold">Email</p>
+                                <a href="mailto:himanshuaggarwal.0011@gmail.com"
+                                    class="text-decoration-none text-body-secondary">
+                                    himanshuaggarwal.0011@gmail.com
+                                </a>
+                            </div>
+                            <div class="col-sm-6 mb-2">
+                                <p class="mb-1 fw-semibold">Phone</p>
+                                <p class="mb-0">+91 8585987778</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="card-ghost">
+                        <h6 class="mb-3">Online Profiles</h6>
+                        <ul class="list-unstyled small mb-0">
+                            <li class="mb-2 d-flex align-items-center gap-2">
+                                <i class="fa-brands fa-linkedin text-primary"></i>
+                                <a href="https://www.linkedin.com/in/himanshu-aggarwal-47298024a/" target="_blank"
+                                    class="text-decoration-none text-body-secondary">
+                                    LinkedIn Profile
+                                </a>
+                            </li>
+                            <li class="mb-2 d-flex align-items-center gap-2">
+                                <i class="fa-brands fa-github"></i>
+                                <a href="https://github.com/himanshuagg123" target="_blank"
+                                    class="text-decoration-none text-body-secondary">
+                                    GitHub Profile
+                                </a>
+                            </li>
+                            <!-- You can add LeetCode here later if you want -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-top" data-aos="fade-up">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+            <p class="mb-0">
+                © <span id="year"></span> Himanshu Aggarwal. All rights reserved.
+            </p>
+            <p class="mb-0">Built with HTML, CSS & Bootstrap.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Current year
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop - 140;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + current) {
+                    link.classList.add("active");
+                }
+            });
+        });
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById("themeToggle");
+
+        themeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            themeToggle.textContent = document.body.classList.contains("dark-mode") ? "☀️ Light" : "🌙 Dark";
+        });
+
+        // Project Filter System
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectItems = document.querySelectorAll('.project-item');
+
+        filterButtons.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                btn.classList.add('active');
+
+                const category = btn.dataset.filter;
+
+                projectItems.forEach((item) => {
+                    if (category === 'all' || item.classList.contains(category)) {
+                        item.style.display = 'block';
+                        item.classList.add('animate-project');
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+
+
+    </script>
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 900,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+
+</body>
+
+</html>
