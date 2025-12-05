@@ -517,7 +517,7 @@
                         </button>
                     </li>
                     <li class="nav-item ms-lg-2">
-                        <a class="btn btn-primary btn-sm btn-pill" href="Himanshu_Aggarwal_Resume.pdf" target="_blank">
+                        <a class="btn btn-primary btn-sm btn-pill" href="Himanshu_Aggarwal_Resume.pdf" target="_blank" onclick="trackResumeDownload()">
                             Download Resume
                         </a>
                     </li>
@@ -552,10 +552,11 @@
                             View Projects
                         </a>
                         <a href="Himanshu_Aggarwal_Resume.pdf" target="_blank"
-                            class="btn-outline-soft mb-2 d-inline-flex align-items-center gap-2">
+                            class="btn-outline-soft mb-2 d-inline-flex align-items-center gap-2" onclick="trackResumeDownload()">
                             <i class="fa-regular fa-file-lines"></i>
                             Download Resume
                         </a>
+                        <p id="downloadCount" class="small text-body-secondary mt-1"></p>
                     </div>
 
                     <div class="d-flex flex-wrap gap-3 align-items-center">
@@ -1131,7 +1132,7 @@
             <p class="mb-0">
                 © <span id="year"></span> Himanshu Aggarwal. All rights reserved.
             </p>
-
+            <p id="viewCount" class="mb-0"></p>
         </div>
     </footer>
 
