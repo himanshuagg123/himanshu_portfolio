@@ -371,6 +371,8 @@
             color: var(--primary);
             font-weight: 700;
         } */
+
+
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2rem !important;
@@ -422,6 +424,24 @@
         .dark-mode .navbar-toggler {
             border-color: rgba(248, 250, 252, 0.8);
             /* light border in dark mode */
+        }
+
+        #typingText {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        #typingText::after {
+            content: '|';
+            margin-left: 4px;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
         }
     </style>
 </head>
@@ -481,9 +501,9 @@
                         <i class="fa-solid fa-laptop-code"></i>
                         Software Developer · AI/ML Enthusiast
                     </div>
-                    <!-- <h1 class="hero-title">
-                        I build software, automation systems & applied AI solutions.
-                    </h1> -->
+                    <h1 class="hero-title">
+                        <span id="typingText" class="text-primary"></span>
+                    </h1>
                     <p class="hero-subtitle mb-3">
                         I’m <strong>Himanshu Aggarwal</strong>, a Software Developer and
                         B.Tech (ECE) student who enjoys turning ideas into working products
