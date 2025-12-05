@@ -405,6 +405,24 @@
                 font-size: 1rem;
             }
         }
+
+        /* Fix Navbar Toggle Icon in Dark Mode */
+        .dark-mode .navbar-toggler-icon {
+            filter: invert(1);
+            /* Makes it white */
+        }
+
+        /* Make hamburger icon clearer in all modes */
+        .navbar-toggler-icon {
+            background-size: 26px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .dark-mode .navbar-toggler {
+            border-color: rgba(248, 250, 252, 0.8);
+            /* light border in dark mode */
+        }
     </style>
 </head>
 
@@ -1059,7 +1077,7 @@
             <p class="mb-0">
                 © <span id="year"></span> Himanshu Aggarwal. All rights reserved.
             </p>
-           
+
         </div>
     </footer>
 
