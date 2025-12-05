@@ -517,7 +517,8 @@
                         </button>
                     </li>
                     <li class="nav-item ms-lg-2">
-                        <a class="btn btn-primary btn-sm btn-pill" href="Himanshu_Aggarwal_Resume.pdf" target="_blank" onclick="trackResumeDownload()">
+                        <a class="btn btn-primary btn-sm btn-pill" href="Himanshu_Aggarwal_Resume.pdf" target="_blank"
+                            onclick="trackResumeDownload()">
                             Download Resume
                         </a>
                     </li>
@@ -552,7 +553,8 @@
                             View Projects
                         </a>
                         <a href="Himanshu_Aggarwal_Resume.pdf" target="_blank"
-                            class="btn-outline-soft mb-2 d-inline-flex align-items-center gap-2" onclick="trackResumeDownload()">
+                            class="btn-outline-soft mb-2 d-inline-flex align-items-center gap-2"
+                            onclick="trackResumeDownload()">
                             <i class="fa-regular fa-file-lines"></i>
                             Download Resume
                         </a>
@@ -1202,6 +1204,45 @@
                 loader.style.transition = "opacity 0.4s ease";
             }, 400);
         });
+        // ------- PORTFOLIO VIEW COUNTER -------
+        fetch("https://api.countapi.xyz/hit/himanshu_portfolio/views")
+            .then(res => res.json())
+            .then(data => {
+                const viewEl = document.getElementById("viewCount");
+                if (viewEl) {
+                    viewEl.textContent = `👀 Viewed by ${data.value} people`;
+                }
+            })
+            .catch(err => console.error("View count error:", err));
+
+        // ------- RESUME DOWNLOAD COUNTER -------
+        function updateDownloadCount() {
+            fetch("https://api.countapi.xyz/get/himanshu_resume/downloads")
+                .then(res => res.json())
+                .then(data => {
+                    const dlEl = document.getElementById("downloadCount");
+                    if (dlEl) {
+                        dlEl.textContent = `📄 Downloaded ${data.value} times`;
+                    }
+                })
+                .catch(err => console.error("Download count fetch error:", err));
+        }
+
+        function trackResumeDownload() {
+            fetch("https://api.countapi.xyz/hit/himanshu_resume/downloads")
+                .then(res => res.json())
+                .then(data => {
+                    const dlEl = document.getElementById("downloadCount");
+                    if (dlEl) {
+                        dlEl.textContent = `📄 Downloaded ${data.value} times`;
+                    }
+                })
+                .catch(err => console.error("Download count hit error:", err));
+        }
+
+        // Get initial download count on page load
+        updateDownloadCount();
+
 
 
 
