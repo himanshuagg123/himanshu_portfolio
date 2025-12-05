@@ -1204,45 +1204,46 @@
                 loader.style.transition = "opacity 0.4s ease";
             }, 400);
         });
-        // ------- PORTFOLIO VIEW COUNTER -------
-        fetch("https://api.countapi.xyz/hit/himanshu_portfolio/views")
-            .then(res => res.json())
-            .then(data => {
-                const viewEl = document.getElementById("viewCount");
-                if (viewEl) {
-                    viewEl.textContent = `👀 Viewed by ${data.value} people`;
-                }
-            })
-            .catch(err => console.error("View count error:", err));
 
-        // ------- RESUME DOWNLOAD COUNTER -------
-        function updateDownloadCount() {
-            fetch("https://api.countapi.xyz/get/himanshu_resume/downloads")
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // ------- VIEW COUNTER -------
+            fetch("https://api.countapi.xyz/hit/himanshu_portfolio/views")
                 .then(res => res.json())
                 .then(data => {
-                    const dlEl = document.getElementById("downloadCount");
-                    if (dlEl) {
-                        dlEl.textContent = `📄 Downloaded ${data.value} times`;
+                    const viewEl = document.getElementById("viewCount");
+                    if (viewEl) {
+                        viewEl.textContent = `👀 Viewed by ${data.value} people`;
                     }
-                })
-                .catch(err => console.error("Download count fetch error:", err));
-        }
+                });
 
-        function trackResumeDownload() {
-            fetch("https://api.countapi.xyz/hit/himanshu_resume/downloads")
-                .then(res => res.json())
-                .then(data => {
-                    const dlEl = document.getElementById("downloadCount");
-                    if (dlEl) {
-                        dlEl.textContent = `📄 Downloaded ${data.value} times`;
-                    }
-                })
-                .catch(err => console.error("Download count hit error:", err));
-        }
+            // ------- DOWNLOAD COUNTER -------
+            function updateDownloadCount() {
+                fetch("https://api.countapi.xyz/get/himanshu_resume/downloads")
+                    .then(res => res.json())
+                    .then(data => {
+                        const dlEl = document.getElementById("downloadCount");
+                        if (dlEl) {
+                            dlEl.textContent = `📄 Downloaded ${data.value} times`;
+                        }
+                    });
+            }
 
-        // Get initial download count on page load
-        updateDownloadCount();
+            function trackResumeDownload() {
+                fetch("https://api.countapi.xyz/hit/himanshu_resume/downloads")
+                    .then(res => res.json())
+                    .then(data => {
+                        const dlEl = document.getElementById("downloadCount");
+                        if (dlEl) {
+                            dlEl.textContent = `📄 Downloaded ${data.value} times`;
+                        }
+                    });
+            }
 
+            updateDownloadCount();
+            window.trackResumeDownload = trackResumeDownload;
+
+        });
 
 
 
