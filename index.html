@@ -1207,46 +1207,45 @@
 
         document.addEventListener("DOMContentLoaded", () => {
 
-            // ------- VIEW COUNTER -------
-            fetch("https://api.countapi.xyz/hit/himanshu_portfolio/views")
+            // ------- PORTFOLIO VIEW COUNTER -------
+            fetch("https://api.counterapi.dev/hit/himanshu_portfolio/views")
                 .then(res => res.json())
                 .then(data => {
                     const viewEl = document.getElementById("viewCount");
                     if (viewEl) {
-                        viewEl.textContent = `👀 Viewed by ${data.value} people`;
+                        viewEl.textContent = `👀 Viewed by ${data.count} people`;
                     }
-                });
+                })
+                .catch(err => console.error("View count error:", err));
 
-            // ------- DOWNLOAD COUNTER -------
+            // ------- RESUME DOWNLOAD COUNTER -------
             function updateDownloadCount() {
-                fetch("https://api.countapi.xyz/get/himanshu_resume/downloads")
+                fetch("https://api.counterapi.dev/get/himanshu_resume/downloads")
                     .then(res => res.json())
                     .then(data => {
                         const dlEl = document.getElementById("downloadCount");
                         if (dlEl) {
-                            dlEl.textContent = `📄 Downloaded ${data.value} times`;
+                            dlEl.textContent = `📄 Downloaded ${data.count} times`;
                         }
-                    });
+                    })
+                    .catch(err => console.error("Download count fetch error:", err));
             }
 
             function trackResumeDownload() {
-                fetch("https://api.countapi.xyz/hit/himanshu_resume/downloads")
+                fetch("https://api.counterapi.dev/hit/himanshu_resume/downloads")
                     .then(res => res.json())
                     .then(data => {
                         const dlEl = document.getElementById("downloadCount");
                         if (dlEl) {
-                            dlEl.textContent = `📄 Downloaded ${data.value} times`;
+                            dlEl.textContent = `📄 Downloaded ${data.count} times`;
                         }
-                    });
+                    })
+                    .catch(err => console.error("Download count hit error:", err));
             }
 
             updateDownloadCount();
             window.trackResumeDownload = trackResumeDownload;
-
         });
-
-
-
 
     </script>
     <!-- AOS JS -->
